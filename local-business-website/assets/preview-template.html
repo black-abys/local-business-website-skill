@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{NAME}} | {{TAG}}</title>
+<meta name="description" content="{{TAG}}. Call {{PHONED}}.">
+<meta name="robots" content="noindex">
+<style>
+:root{--a:{{ACCENT}};--b:{{ACCENT2}};--bg:{{BG}};--fg:#f4f4f5;--mut:#a1a1aa;--card:rgba(255,255,255,.05)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.55;padding-bottom:76px}
+a{color:inherit}
+.preview{background:#fde68a;color:#3f3f46;font-size:12px;text-align:center;padding:6px 12px}
+header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:rgba(10,10,12,.85);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-weight:800;letter-spacing:.2px;text-decoration:none;display:flex;gap:8px;align-items:center}
+.logo span{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--a),var(--b))}
+nav a{color:var(--mut);text-decoration:none;margin-left:16px;font-size:14px}
+nav{display:none}
+.hero{padding:56px 20px 44px;background:radial-gradient(120% 80% at 100% 0%,color-mix(in srgb,var(--b) 45%,transparent),transparent 60%),radial-gradient(90% 70% at 0% 100%,color-mix(in srgb,var(--a) 30%,transparent),transparent 60%)}
+.kicker{color:var(--a);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px}
+h1{font-size:clamp(30px,8vw,52px);line-height:1.1;margin:10px 0 14px}
+.hero p{color:#d4d4d8;max-width:560px}
+.badge{display:inline-flex;gap:6px;align-items:center;margin-top:18px;padding:7px 12px;border-radius:999px;background:var(--card);border:1px solid rgba(255,255,255,.1);font-size:14px}
+.badge b{color:var(--a)}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:12px;font-weight:700;text-decoration:none;min-height:48px}
+.call{background:var(--a);color:#111}
+.wa{background:#25D366;color:#062b14}
+section{padding:44px 20px;max-width:1000px;margin:auto}
+h2{font-size:26px;margin-bottom:18px}
+.grid{display:grid;gap:12px;grid-template-columns:1fr}
+.card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px}
+.card h3{font-size:17px;margin-bottom:4px;color:var(--a)}
+.card p{color:var(--mut);font-size:15px}
+mark{background:#fde68a;color:#3f3f46;padding:0 3px;border-radius:3px}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+td{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+td:last-child{text-align:right;color:var(--mut)}
+.contact p{margin:6px 0}
+.map{display:block;margin-top:14px;height:150px;border-radius:14px;background:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0 12px,transparent 12px 24px),linear-gradient(135deg,color-mix(in srgb,var(--b) 40%,transparent),color-mix(in srgb,var(--a) 25%,transparent));display:grid;place-items:center;text-decoration:none;font-weight:600}
+footer{padding:28px 20px;text-align:center;color:var(--mut);font-size:13px}
+.bar{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px;background:rgba(10,10,12,.95);border-top:1px solid rgba(255,255,255,.1);z-index:20}
+.bar .btn{padding:12px}
+@media(min-width:760px){nav{display:block}.grid{grid-template-columns:repeat(3,1fr)}.bar{display:none}body{padding-bottom:0}.hero{padding:96px 40px 80px}section{padding:60px 40px}}
+</style>
+</head>
+<body>
+<div class="preview">Free concept preview prepared by CortexLab. Not the official site of {{NAME}}.</div>
+<header>
+  <a class="logo" href="#top"><span>{{ICON}}</span>{{NAME}}</a>
+  <nav><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+<main id="top">
+<div class="hero">
+  <div class="kicker">{{KICKER}}</div>
+  <h1>{{NAME}}</h1>
+  <p>{{HERO}}</p>
+  <div class="badge">★ <b>{{RATING}}</b> on Google · {{REVIEWS}} reviews</div>
+  <div class="ctas">
+    <a class="btn call" href="tel:{{PHONE}}">📞 Call {{PHONED}}</a>
+    <a class="btn wa" href="https://wa.me/{{WA}}?text={{WATEXT}}" target="_blank" rel="noopener">💬 WhatsApp us</a>
+  </div>
+</div>
+<section id="services"><h2>Services</h2><div class="grid">
+{{SERVICES}}
+</div></section>
+<section id="about"><h2>About</h2><div class="card"><p style="color:#d4d4d8">{{ABOUT}}</p></div></section>
+<section id="contact" class="contact"><h2>Contact & hours</h2>
+<div class="grid" style="grid-template-columns:1fr">
+<div class="card">
+  <p><a href="tel:{{PHONE}}"><b>{{PHONED}}</b></a></p>
+  {{EMAIL}}
+  <p style="color:var(--mut)">{{ADDRESS}}</p>
+  <table>{{HOURS}}</table>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query={{MAPQ}}" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+</div></div>
+</section>
+</main>
+<footer>© <span id="y"></span> {{NAME}} · Concept preview. Photos [placeholder]: owner to supply real photos.</footer>
+<div class="bar">
+  <a class="btn call" href="tel:{{PHONE}}">📞 Call</a>
+  <a class="btn wa" href="https://wa.me/{{WA}}?text={{WATEXT}}" target="_blank" rel="noopener">💬 WhatsApp</a>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
